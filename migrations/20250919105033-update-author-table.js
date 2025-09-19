@@ -3,11 +3,9 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
+    await queryInterface.dropTable('Authors');
     
-    await queryInterface.dropTable('Articles');
-    
-    
-    await queryInterface.createTable('Articles', {
+    await queryInterface.createTable('Authors', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -18,26 +16,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      slug: {
+      email: {
         type: Sequelize.STRING,
         allowNull: false,
         unique: true
-      },
-      image: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      body: {
-        type: Sequelize.TEXT,
-        allowNull: false
-      },
-      published: {
-        type: Sequelize.DATE,
-        allowNull: false
-      },
-      author_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
       },
       createdAt: {
         allowNull: false,
@@ -51,6 +33,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Articles');
+    await queryInterface.dropTable('Authors');
   }
 };
