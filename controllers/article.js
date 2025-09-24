@@ -5,7 +5,6 @@ const Author = require('../models/author')(sequelize, Sequelize.DataTypes);
 
 const models = require('../models');
 
-Article.hasOne(Author)
 
 
 // get all data from table
