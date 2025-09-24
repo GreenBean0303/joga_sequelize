@@ -1,7 +1,10 @@
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize('mysql://root:qwerty@localhost:3306/joga_sequelize');
-
 const Article = require('../models/article')(sequelize, Sequelize.DataTypes);
+const Author = require('../models/author')(sequelize, Sequelize.DataTypes);
+
+Article.hasOne(Author)
+
 
 // get all data from table
 const getAllArticles = (req, res) => {
@@ -13,8 +16,25 @@ const getAllArticles = (req, res) => {
     .catch(error => {
         return res.status(500).send(error.message);
     })
+}
+
+const getArticleBySlug = (req, res) => {
+    Article.findOne({ 
+        where: { 
+            slug: req.params.slug 
+        } 
+    })
+    .then(article => {
+        console.log(article)
+        return res.status(200).json({ article });
+        })
+        .catch (error => {
+            return res.status(500).send(error.message);
+        })
 };
+        
 
 module.exports = {
-    getAllArticles
+    getAllArticles,
+    getArticleBySlug
 }; 

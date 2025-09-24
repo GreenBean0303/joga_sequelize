@@ -16,7 +16,13 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       }
-    ], {});
+    ], {
+       name: 'Peep Seep',
+       email: 'Peep.Seep@example.com',
+       createdAt: new Date(),
+       updatedAt: new Date()
+
+    });
   },
 
   async down(queryInterface, Sequelize) {
