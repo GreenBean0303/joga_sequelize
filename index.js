@@ -16,6 +16,10 @@ sequelize
     console.error("Unable to connect to the database:", err);
   });
 
+const articleRouter = require('./routes/article.js');
+app.use('/', articleRouter);
+
+
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to sequelize application." });
 });

@@ -12,7 +12,7 @@ module.exports = {
       },
       {
         name: 'Agnes Agne',
-        email: 'Agnes.Agneh@example.com',
+        email: 'Agnes.Agne@example.com',
         createdAt: new Date(),
         updatedAt: new Date()
       }
