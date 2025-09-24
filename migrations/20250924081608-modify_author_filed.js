@@ -1,30 +1,29 @@
 'use strict';
 
-/** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Authors', {
-      id: {
-        allowNull: false,
+  up (queryInterface, Sequelize) {
+    return Promise.all([
+      queryInterface.changeColumn('Authors', 'id', {
+        type: Sequelize.INTEGER,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
-      },
-      name: {
+        allowNull: false
+      }),
+      queryInterface.changeColumn('Authors', 'name', {
         type: Sequelize.STRING,
         allowNull: false
-      },
-      createdAt: {
+      }),
+      queryInterface.changeColumn('Authors', 'email', {
+        type: Sequelize.STRING,
         allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
-    });
+        unique: true
+      })
+    ]);
   },
-  down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Authors');
+
+  down (queryInterface) {
+    return Promise.all([
+      queryInterface.dropTable('Authors')
+    ]);
   }
 };

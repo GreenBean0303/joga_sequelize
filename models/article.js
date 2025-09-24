@@ -5,17 +5,21 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Article extends Model {
     static associate(models) {
-      Article.belongsTo(models.Author, {
-        foreignKey: 'author_id'
-      });
+     this.belongsTo(models.Author, {
+      foreignKey:{
+        name: 'AuthorId',
+        field: 'author_id',
+      } 
+    }) 
     }
   }
+
   Article.init({
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
-      autoIncrement: true
+      allowNull: false
     },
     name: {
       type: DataTypes.STRING,

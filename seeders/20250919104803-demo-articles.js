@@ -7,7 +7,7 @@ module.exports = {
         name: 'Introduction to Ashtanga',
         slug: 'introduction-to-ashtanga',
         image: 'ashtanga.jpg',
-        body: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+        body: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit<p>',
         published: '2020-01-05 15:02:30',
         author_id: 1,
         createdAt: new Date(),
@@ -17,9 +17,9 @@ module.exports = {
         name: 'Morning vinyasa flow routine',
         slug: 'morning-vinyasa-flow-routine',
         image: 'morning.jpg',
-        body: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+        body: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit<p>',
         published: '2020-04-14 15:02:41',
-        author_id: 2,
+        author_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       }]),
@@ -27,9 +27,9 @@ module.exports = {
         name: 'Secrets of a yoga teacher',
         slug: 'secrets-of-a-yoga-teacher',
         image: 'yoga-teacher.jpg',
-        body: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+        body: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit<p>',
         published: '2020-05-25 15:02:55',
-        author_id: 3,
+        author_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       }])
